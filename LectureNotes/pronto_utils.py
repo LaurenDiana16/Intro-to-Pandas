@@ -21,4 +21,4 @@ def get_year_data(df, column_with_year, year):
     if df.dtypes[column_with_year] == 'datetime64[ns]':
         return df[df.column_with_year.dt.year == year]
     else:
-        print("Column with year is not a datetime64 object.")
+        raise ValueError("Column with year is not a datetime64 object.")
